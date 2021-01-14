@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-5">
+        <app-pagination [totalItems]="count" [pageSize]="params.pageSize"
+        (onPageSelected)="changePage($event)"></app-pagination>
+    </div>
+    <div class="col-6">
+        <ul class="pagination">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="params.pageSize" (change) = "sortCards()">
+                <label ngbButtonLabel class="btn-primary">
+                  <input ngbButton type="radio" [value] = "5">5
+                </label>
+                <label ngbButtonLabel class="btn-primary">
+                  <input ngbButton type="radio" [value] = "10">10
+                </label>
+                <label ngbButtonLabel class="btn-primary">
+                  <input ngbButton type="radio" [value] = "20">20
+                </label>
+              </div>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12" *ngFor="let item of cardList">
+        <app-card [card]="item"></app-card> 
+    </div>
+</div>

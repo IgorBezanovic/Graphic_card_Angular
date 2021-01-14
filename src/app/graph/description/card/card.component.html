@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-3" >
+        <img src="{{card.image}}" alt="" class="img-fluid" style="height: 10em; margin-left:4em;">
+    </div>
+    <div class="col-1">
+    </div>
+    <div class="col-7">
+        <p><a  [routerLink] = "['/cards/', card._id]" href="#">{{card.title}} </a><small> {{card.subtitle}}</small></p>
+        <p>{{(showMore) ? card.description : card.description | slice:0:130}}<span *ngIf="!showMore">...</span> 
+            <br>
+            <a href="javascript:;" *ngIf="!showMore" (click)="showMore=true">[Show More]</a>
+            <a href="javascript:;" *ngIf="showMore" (click)="showMore=false">[Show less]</a>
+        </p>
+        <p>Grade: 
+            <button type="button" class="btn btn-success" (click) = "vote(card.grade + 1)">+</button>
+            <strong>  {{card.grade}}  </strong>
+            <button type="button" class="btn btn-danger" (click) = "vote(card.grade - 1)">-</button>
+        </p>
+    </div>
+</div>
