@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="row">
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+             
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="parameters.pageSize" (change) = "sortCards()">
+                  <div class="row">
+                    <p>Odaberite broj Grafickih kartica po stranici:</p> 
+                  </div> 
+                  <div class="row">
+                    <label ngbButtonLabel class="btn-primary">
+                       <input ngbButton type="radio" [value]="5">5
+                     </label>
+                     <label ngbButtonLabel class="btn-primary">
+                       <input ngbButton type="radio" value="10">10
+                     </label>
+                     <label ngbButtonLabel class="btn-primary">
+                       <input ngbButton type="radio" [value]="20">20
+                     </label>
+                  </div>
+                  </div>
+            </ul>
+          </nav>
+    </div>
+
+    <div class="row">
+
+        <div class="col-8">
+
+            <app-card-details *ngFor = "let cardDetail of cardList?.results" [card] = "cardDetail"></app-card-details>
+        </div>
+        <div class="col-4">
+            <ng-container *ngIf = "cardId">
+            <app-card-comments></app-card-comments>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+
+
