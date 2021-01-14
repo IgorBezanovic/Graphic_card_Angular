@@ -8,11 +8,14 @@
     </div>
     <div class="col-7">
         <p><a  [routerLink] = "['/cards/', card._id]" href="#">{{card.title}} </a><small> {{card.subtitle}}</small></p>
-        <p>{{(showMore) ? card.description : card.description | slice:0:130}}<span *ngIf="!showMore">...</span> 
+        
+        <p *ngIf="card.description.length > 130 ">{{(showMore) ? card.description : card.description | slice:0:130}}<span *ngIf="!showMore">...</span> 
             <br>
             <a href="javascript:;" *ngIf="!showMore" (click)="showMore=true">[Show More]</a>
             <a href="javascript:;" *ngIf="showMore" (click)="showMore=false">[Show less]</a>
         </p>
+        <p *ngIf="card.description.length <= 130 ">{{card.description}}</p>
+        
         <p>Grade: 
             <button type="button" class="btn btn-success" (click) = "vote(card.grade + 1)">+</button>
             <strong>  {{card.grade}}  </strong>
