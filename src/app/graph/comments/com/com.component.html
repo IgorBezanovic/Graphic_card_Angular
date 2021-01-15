@@ -1,8 +1,8 @@
-<div *ngFor = "let comment of commentList?.results" class="row">
-    <div class="col-6" style="color:'green'">{{comment?.author}}</div>
-    <div class="col-6">{{comment?.date | date:'medium' }}</div>
+<div *ngFor = "let comment of commentList?.results" class="row bckg">
+    <div class="col-6 margin-top" style="color:'green'">{{comment?.author}}</div>
+    <div class="col-6 margin-top">{{comment?.date | date:'medium' }}</div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 text" >
         <p>{{comment?.text}}</p>
       </div>
     </div>

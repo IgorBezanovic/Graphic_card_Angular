@@ -1,0 +1,17 @@
+.center{
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffffc4;
+    border-radius: 10px;
+    flex-direction: row-reverse;
+}
+.info{
+    margin: 2em 0;
+}
+img{
+    height: 10em;
+    margin-left: 5em;
+    border-radius: 3em;
+}

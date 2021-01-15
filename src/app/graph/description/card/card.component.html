@@ -6,7 +6,7 @@
     </div>
     <div class="col-1">
     </div>
-    <div class="col-7 bckg">
+    <div class="col-6 bckg">
         <p><a  [routerLink] = "['/cards/', card._id]" href="#">{{card.title}} </a><small> {{card.subtitle}}</small></p>
         
         <p *ngIf="card.description.length > 130 ">{{(showMore) ? card.description : card.description | slice:0:130}}<span *ngIf="!showMore">...</span> 

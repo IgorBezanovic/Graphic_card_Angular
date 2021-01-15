@@ -1,4 +1,7 @@
 <div class="row">
+  <div class="col-12" style="border-bottom: 1px solid gray; margin-top: 2em;"></div>
+</div>
+<div class="row">
     <div class="col-2"></div>
     <div class="col-5">
         <app-pagination [totalItems]="count" [pageSize]="params.pageSize"
@@ -8,7 +11,7 @@
       <p>Chose numer of card's per sheet:</p>
         <ul class="pagination" style="text-align: center;">
             <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="params.pageSize" (change) = "sortCards()">
-                <label ngbButtonLabel class="btn-primary">
+                <label ngbButtonLabel class="btn-primary" >
                   <input ngbButton type="radio" [value] = "5">5
                 </label>
                 <label ngbButtonLabel class="btn-primary">

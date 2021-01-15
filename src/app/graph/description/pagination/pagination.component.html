@@ -3,10 +3,10 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">    
             <li class="page-item" (click)="pageSelected(activePage-1)" *ngIf="activePage>1">
-                <a class="page-link">Previous</a>
+                <a class="page-link" style="cursor: pointer;">Previous</a>
             </li> 
             <li class="page-item" (click)="pageSelected(activePage+1)" *ngIf="activePage<getNoPages()">
-                <a class="page-link">Next</a>
+                <a class="page-link" style="cursor: pointer;">Next</a>
             </li>
         </ul>
     </nav>
